@@ -3,6 +3,7 @@
 
 To run tests, run the following command
 
+Make Virtual Environtment 
 ```bash
   virtualenv <your_env>
 ```
