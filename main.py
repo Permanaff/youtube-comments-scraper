@@ -11,7 +11,6 @@ driver.maximize_window()
 sleep(5)
 search=driver.find_element(By.NAME,"search_query")
 search.clear()
-# type name of video or any keyword this will only find the first video of your search 
 search.send_keys("Virtual Medley Lagu Daerah 2024 Ver. - hololive ID [Cover]")
 
 search.send_keys(Keys.ENTER)
@@ -34,6 +33,6 @@ print(list)
 print(len(list))
 import pandas as pd
 df=pd.DataFrame({"comment":list})
-df.to_csv("you_tube_comment_1.csv",index=False)
+df.to_csv("comment_youtube.csv",index=False)
 assert "No results found." not in driver.page_source
 driver.close()
