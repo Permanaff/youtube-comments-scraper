@@ -4,21 +4,23 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from time import sleep
 
+video_title = input('Video Title : ')
+
 driver=webdriver.Chrome()
-driver.set_page_load_timeout(10)
+driver.set_page_load_timeout(30)
 driver.get('https://www.youtube.com/')
 driver.maximize_window()
 sleep(5)
 search=driver.find_element(By.NAME,"search_query")
 search.clear()
-search.send_keys("Virtual Medley Lagu Daerah 2024 Ver. - hololive ID [Cover]")
+search.send_keys(video_title)
 
 search.send_keys(Keys.ENTER)
 sleep(5)
 link=driver.find_element(By.XPATH,"""//*[@id="video-title"]/yt-formatted-string""")
 link.click()
 sleep(20)
-for i in range(2000):
+for i in range(1000):
     driver.execute_script("window.scrollBy(0,700)","")
     sleep(2)
 sleep(20)
